@@ -4,7 +4,7 @@ part of 'usuario_bloc.dart';
 abstract class UsuarioEvent {}
 
 class ActivarUsuario extends UsuarioEvent {
-  final Usuario user;
+  final Usuario usuario;
 
-  ActivarUsuario(this.user);
+  ActivarUsuario(this.usuario);
 }

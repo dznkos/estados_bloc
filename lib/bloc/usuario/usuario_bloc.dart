@@ -14,6 +14,8 @@ class UsuarioBloc extends Bloc<UsuarioEvent, UsuarioState> {
   Stream<UsuarioState> mapEventToState(UsuarioEvent event) async* {
     print('Hola Mundo');
 
-    yield UsuarioState();
+    if (event is ActivarUsuario) {
+      yield UsuarioState(user: event.usuario);
+    }
   }
 }
