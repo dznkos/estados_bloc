@@ -1,4 +1,5 @@
 import 'package:estados_cubit/bloc/usuario/usuario_bloc.dart';
+
 import 'package:estados_cubit/models/usuario.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +22,7 @@ class PageTwo extends StatelessWidget {
               final newUser = Usuario(
                   nombre: 'Luis',
                   edad: 26,
-                  profesiones: ['Master of Dart', 'Flutter Developer']);
+                  profesiones: ['Software', 'Flutter Developer']);
 
               BlocProvider.of<UsuarioBloc>(context).add(
                 ActivarUsuario(newUser),
@@ -31,7 +32,9 @@ class PageTwo extends StatelessWidget {
           ),
           MaterialButton(
             child: Text('Cambiar Edad', style: TextStyle(color: Colors.white)),
-            onPressed: () {},
+            onPressed: () {
+              BlocProvider.of<UsuarioBloc>(context).add(CambiarEdad(30));
+            },
             color: Colors.blue,
           ),
           MaterialButton(

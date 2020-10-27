@@ -16,6 +16,9 @@ class UsuarioBloc extends Bloc<UsuarioEvent, UsuarioState> {
 
     if (event is ActivarUsuario) {
       yield UsuarioState(user: event.usuario);
+    } else if (event is CambiarEdad) {
+      // enviar estado actualizado
+      yield UsuarioState(user: state.usuario.coypWith(edad: event.edad));
     }
   }
 }
